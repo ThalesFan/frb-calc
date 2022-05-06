@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:open": "cypress open"
   },
   "repository": {
     "type": "git",
@@ -18,8 +19,5 @@
   "homepage": "https://github.com/ThalesFan/frb-calc#readme",
   "dependencies": {
     "cypress": "^9.6.0"
-  },
-  "devDependencies": {
-    "eslint": "^8.14.0"
   }
 }
