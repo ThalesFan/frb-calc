@@ -5,11 +5,10 @@ export class Calculator {
   }
 
   /**
-   * enters given expression to the calculator
+   * Enters expression to the calculator
+   * The expression is an array of terms which will be entered to the calculator.
    *
-   * the expression given is an array of terms which will be entered to the calculator.
-   *
-   * every term must be separated, with the exception of number which can be joined together
+   * Every term must be separated, with the exception of number which can be joined together
    * as such: "123" (instead of ["1","2","3"])
    *
    * NOTE: to calculate the expression: add "=" as the final term
@@ -30,7 +29,7 @@ export class Calculator {
 
   /**
    *
-   * @returns the DOM elements rows of the history panel
+   * @returns The DOM elements rows of the history panel
    */
   history() {
     let hist = cy.get("#histframe");
@@ -42,14 +41,14 @@ export class Calculator {
   }
 
   /**
-   * get the displayed number on the calculator
+   * Get the displayed number on the calculator
    */
   display() {
     return cy.get("#input");
   }
 
   /**
-   * clears the calculator display
+   * Clears the calculator display
    */
   clear() {
     this.getEl("c").click();
@@ -73,7 +72,7 @@ export class Calculator {
       return cy.get("#Btn" + identity);
 
     switch (identity) {
-      //Operators
+      //Simple operators
       case "+":
         return cy.get("#BtnPlus");
       case "-":
@@ -83,6 +82,7 @@ export class Calculator {
       case "/":
         return cy.get("#BtnDiv");
 
+      //Function keys
       case "(":
         return cy.get("#BtnParanL");
       case ",":
@@ -104,6 +104,8 @@ export class Calculator {
         return cy.get("#BtnCosh");
       case "tanh":
         return cy.get("#BtnTanh");
+
+      //More buttons should be located.
 
       case "c":
         return cy.get("#BtnClear");
